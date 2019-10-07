@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="_04_BotonesEnTiempoDeEjecucion.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_04_BotonesEnTiempoDeEjecucion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Name="Stack">
+        <Button Name="Boton1" Content="Boton 1" Width="200" Height="70" Background="Blue" FontFamily="Verdana" FontStyle="Italic" FontWeight="Bold" BorderBrush="Yellow" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Button>
+            <Button.Name>Boton2</Button.Name>
+            <Button.Content>Boton 2</Button.Content>
+            <Button.Width>200</Button.Width>
+            <Button.Height>70</Button.Height>
+            <Button.Background>Blue</Button.Background>
+            <Button.BorderBrush>Yellow</Button.BorderBrush>
+            <Button.FontFamily>Verdana</Button.FontFamily>
+            <Button.FontStyle>Italic</Button.FontStyle>
+            <Button.FontWeight>Bold</Button.FontWeight>
+            <Button.VerticalAlignment>Center</Button.VerticalAlignment>
+            <Button.HorizontalAlignment>Center</Button.HorizontalAlignment>
+        </Button>
+    </StackPanel>
+</Page>
