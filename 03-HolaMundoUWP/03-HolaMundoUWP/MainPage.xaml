@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="_03_HolaMundoUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_03_HolaMundoUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button  x:Name="btnSaludar" Content="Saludar" HorizontalAlignment="Left" Margin="376,432,0,0" VerticalAlignment="Top" Click="BtnSaludar_Click"/>
+        <TextBox x:Name="txtbox" HorizontalAlignment="Left" Margin="371,359,0,0" Text="&#xD;&#xA;" VerticalAlignment="Top"/>
+        <ListView HorizontalAlignment="Left" Height="100" Margin="418,375,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="speech" Content="habla" HorizontalAlignment="Left" Margin="480,432,0,0" VerticalAlignment="Top" Click="Speech_Click"/>
+
+    </Grid>
+</Page>

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.SpeechSynthesis;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -15,7 +17,7 @@ using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
 
-namespace _04_BotonesEnTiempoDeEjecucion
+namespace _03_HolaMundoUWP
 {
     /// <summary>
     /// Página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
@@ -25,23 +27,24 @@ namespace _04_BotonesEnTiempoDeEjecucion
         public MainPage()
         {
             this.InitializeComponent();
-            dynamicControl();
         }
-        private void dynamicControl()
-        {
-            Button b3 = new Button();
-            b3.Content = "Boton 3";
-            b3.Width = 200;
-            b3.Height = 70;
-            b3.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Blue);
-            b3.VerticalAlignment = VerticalAlignment.Center;
-            b3.HorizontalAlignment = HorizontalAlignment.Center;
-            b3.FontFamily = new FontFamily("Verdana");
-            b3.FontSize = 16;
-            b3.FontWeight = Windows.UI.Text.FontWeights.Bold;
-            b3.BorderBrush = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Yellow);
 
-            Stack.Children.Add(b3);
+        private async void BtnSaludar_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new MessageDialog("Hola Mundo");
+            await dialog.ShowAsync();
+        }
+
+        private async void Speech_Click(object sender, RoutedEventArgs e)
+        {
+            MediaElement mediaElement = new MediaElement();
+
+            var speech = new SpeechSynthesizer();
+
+            SpeechSynthesisStream stream = await speech.SynthesizeTextToStreamAsync(txtbox.Text);
+
+            mediaElement.SetSource(stream, stream.ContentType);
+            mediaElement.Play();
         }
     }
 }
