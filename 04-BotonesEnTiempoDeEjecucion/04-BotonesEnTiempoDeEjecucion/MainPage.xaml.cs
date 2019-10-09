@@ -22,6 +22,8 @@ namespace _04_BotonesEnTiempoDeEjecucion
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private Button b3;
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -40,8 +42,13 @@ namespace _04_BotonesEnTiempoDeEjecucion
             b3.FontSize = 16;
             b3.FontWeight = Windows.UI.Text.FontWeights.Bold;
             b3.BorderBrush = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Yellow);
+            b3.Click += b3_Click;
 
             Stack.Children.Add(b3);
+        }
+        private void b3_Click(object sender,RoutedEventArgs e)
+        {
+            b3.Content = "Pulsado";
         }
     }
 }

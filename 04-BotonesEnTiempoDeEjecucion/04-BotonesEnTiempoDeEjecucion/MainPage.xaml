@@ -11,7 +11,7 @@
     <StackPanel Name="Stack">
         <Button Name="Boton1" Content="Boton 1" Width="200" Height="70" Background="Blue" FontFamily="Verdana" FontStyle="Italic" FontWeight="Bold" BorderBrush="Yellow" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-        <Button>
+        <Button Click="Boton2_Click">
             <Button.Name>Boton2</Button.Name>
             <Button.Content>Boton 2</Button.Content>
             <Button.Width>200</Button.Width>
