@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="_06_RelativePanel.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_06_RelativePanel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <RelativePanel Name="padre">
+        <StackPanel Name="stkp1" Orientation="Horizontal">
+            <AppBarButton Name="tick" Icon="Accept"></AppBarButton>
+            <AppBarButton Name="papelera" Icon="Delete"></AppBarButton>
+            <AppBarButton Name="descarga" Icon="Download"></AppBarButton>
+            <AppBarButton Name="buscar" Icon="Scan"></AppBarButton>
+        </StackPanel>
+
+        <RelativePanel Name="rltp1" RelativePanel.Below="stkp1" RelativePanel.AlignLeftWith="stkp1" RelativePanel.AlignRightWith="stkp1" Height="auto">
+            <ListView Name="lista" RelativePanel.Above="back">
+                <x:String>era un domingo en la  tarde</x:String>
+                <x:String>y fui a los coche de choque</x:String>
+                <x:String>piribibibibi</x:String>
+                <x:String>Y estaban pinchando el disco</x:String>
+                <x:String>que a mi tanto me pone</x:String>
+                <x:String>Fui a saca 4 ficha y compre un abono</x:String>
+                <x:String>y estuve ojeando en la pista</x:String>
+                <x:String>pa encontra un coche rojo</x:String>
+                <x:String>mientra daba 1 welta de reconosimiento</x:String>
+                <x:String>mirando si el material de la atraccion</x:String>
+                <x:String>era bueno iba subiendo la rampa</x:String>
+                <x:String>hacia la taquilla</x:String>
+                <x:String>y se me encendio</x:String>
+                <x:String>el alma corazon y rodilla.</x:String>
+            </ListView>
+            <AppBarButton Name="anadir" Icon="Add" Label="Añadir" RelativePanel.AlignRightWithPanel="True" RelativePanel.Above="back"></AppBarButton>
+            <AppBarButton Name="back" Icon="Back" RelativePanel.AlignBottomWithPanel="True" Margin="70,0,0,0"></AppBarButton>
+            <AppBarButton Name="forward" Icon="Forward" RelativePanel.RightOf="back" RelativePanel.AlignBottomWithPanel="True"></AppBarButton>
+        </RelativePanel>
+        
+    </RelativePanel>
+</Page>

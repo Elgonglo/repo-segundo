@@ -72,13 +72,18 @@ namespace _06_LayoutGridForm
             {
                 if(DateTime.TryParse(tbDate.Text, out cumple))
                 {
-                    persona.fecha = cumple;
-                    tblDateError.Text = "";
+                    if (cumple > DateTime.Now)
+                    {
+                        tblDateError.Text = "La Fecha Es Incorrecto";
+                    }
+                    else
+                    {
+                        persona.fecha = cumple;
+                        tblDateError.Text = "";
+                    }
+                    
                 }
-                else if(cumple > DateTime.Now)
-                {
-                    tblDateError.Text = "La Fecha Es Incorrecto";
-                }
+               
                 
             }
         }
