@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="_08_AllPanels.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_08_AllPanels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel Name="RP">
+        <StackPanel Name="SP1" Orientation="Horizontal" BorderBrush="Black" BorderThickness="5" Margin="10" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <TextBlock TextWrapping="Wrap" Name="tb1">Lorem fistrum a peich pupita papaar papaa</TextBlock>
+        </StackPanel>
+        <StackPanel Name="SP2" Orientation="Horizontal" BorderBrush="Black" BorderThickness="5" RelativePanel.Below="SP1" Margin="10,0,10,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <TextBlock TextWrapping="Wrap" Name="tb2">Sexuarl torpedo al ataquerl de la pradera a wan.</TextBlock>
+        </StackPanel>
+        <Grid Name="G1"  BorderThickness="5" Margin="10" RelativePanel.AlignRightWithPanel="True"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="SP2"  BorderBrush="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <VariableSizedWrapGrid Grid.Row="0" Orientation="Horizontal" Grid.Column="0" Margin="10">
+                <Rectangle Margin="10" Fill="Orange" Height="100" Width="100"></Rectangle>
+                <Rectangle Margin="10" Fill="Green" Height="100" Width="100"></Rectangle>
+                <Rectangle Margin="10" Fill="Blue" Height="100" Width="100"></Rectangle>
+            </VariableSizedWrapGrid>
+            <Border Grid.Row="0" Grid.Column="1"  Margin="10" BorderBrush="Black" BorderThickness="5">
+                <TextBlock>papaar sexuarl caballo blanco caballo negroorl.</TextBlock>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1"  Margin="10" BorderBrush="Black" BorderThickness="5">
+                <TextBlock  >papaar sexuarl caballo blanco caballo negroorl.</TextBlock>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="1"  Margin="10" BorderBrush="Black" BorderThickness="5">
+                <TextBlock  >papaar sexuarl caballo blanco caballo negroorl.</TextBlock>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="1"  Margin="10" BorderBrush="Black" BorderThickness="5">
+                <TextBlock  >papaar sexuarl caballo blanco caballo negroorl.</TextBlock>
+            </Border>
+        </Grid>
+        <StackPanel Name="SP3" Margin="10" Orientation="Horizontal" RelativePanel.AlignRightWithPanel="True"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="G1" RelativePanel.AlignBottomWithPanel="True" BorderBrush="Black" BorderThickness="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock>Loren fistrum pegador</TextBlock>
+        </StackPanel>
+    </RelativePanel>
+</Page>

@@ -5,8 +5,13 @@
     xmlns:local="using:_06_LayoutGridForm"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:_06_LayoutGridForm.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <models:clsPersona></models:clsPersona>
+    </Page.DataContext>
 
     <Grid Margin="30">
         <Grid.RowDefinitions>
@@ -23,13 +28,13 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0"  Grid.ColumnSpan="3" HorizontalAlignment="Center">Your Data</TextBlock>
         <TextBlock Margin="10" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">Name:</TextBlock>
-        <TextBox Grid.Row="1" Name="tbName" Grid.Column="1"></TextBox>
+        <TextBox Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Name="tbName" Grid.Column="1"></TextBox>
         <TextBlock Grid.Row="1" Name="tblNameError" Grid.Column="2"   Foreground="Red"></TextBlock>
         <TextBlock Margin="10" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">Surname:</TextBlock>
-        <TextBox Grid.Row="2" Name="tbSurname" Grid.Column="1"></TextBox>
+        <TextBox Text="{Binding apellido,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Name="tbSurname" Grid.Column="1"></TextBox>
         <TextBlock Grid.Row="2" Name="tblSurnameError" Grid.Column="2"   Foreground="Red"></TextBlock>
         <TextBlock Margin="10" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">Date of birth:</TextBlock>
-        <TextBox Grid.Row="3" Name="tbDate" Grid.Column="1"></TextBox>
+        <TextBox Text="{Binding fecha,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Name="tbDate" Grid.Column="1"></TextBox>
         <TextBlock Grid.Row="3" Name="tblDateError" Grid.Column="2" Foreground="Red"></TextBlock>
         <Button Grid.Row="4" Name="btnSend" Grid.Column="1" HorizontalAlignment="Left" Click="BtnSend_Click">Send</Button>
     </Grid>
