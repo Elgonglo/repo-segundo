@@ -1,0 +1,33 @@
+﻿@model _03_HolaMundoPasarDatosALaVista.Models.ListadoPersonas
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListadoPersonas</title>
+</head>
+<body>
+    <div>
+        <table border="1">
+            <tr>
+                <th>Nombre:</th>
+                <th>Apellido:</th>
+                <th>Fecha:</th>
+            </tr>
+            @foreach (var persona in Model.ListarPersonas())
+            {
+                <tr>
+                    <td>@persona.nombre</td>
+                    <td>@persona.apellido</td>
+                    <td>@persona.fecha</td>
+                </tr>
+            }
+        </table>
+        @Html.ActionLink("Ir a Index", "Index");
+    </div>
+</body>
+</html>

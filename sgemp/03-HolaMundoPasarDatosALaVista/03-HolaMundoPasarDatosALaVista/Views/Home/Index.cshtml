@@ -1,10 +1,9 @@
 ﻿
 @{
     Layout = null;
+    @model _03_HolaMundoPasarDatosALaVista.Models.clsPersona
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -12,6 +11,10 @@
 </head>
 <body>
     <div> 
+        <p>Nombre: @Model.nombre</p>
+        <p>Fecha: @ViewBag.fecha</p>
+        <p>Saludo: @ViewData["Saludo"]</p>
     </div>
+    @Html.ActionLink("Ir a lista personas", "ListadoPersonas");
 </body>
 </html>
