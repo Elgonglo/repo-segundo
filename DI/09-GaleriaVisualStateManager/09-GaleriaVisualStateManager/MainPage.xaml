@@ -1,0 +1,132 @@
+﻿<Page
+    x:Class="_09_GaleriaVisualStateManager.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_09_GaleriaVisualStateManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Name="Principal">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Normal">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="550"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="botones.(Grid.Row)" Value="0"/>
+                        <Setter Target="botones.(Grid.Column)" Value="0"/>
+                        <Setter Target="botones.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="botones.(StackPanel.Orientation)" Value="Vertical"/>
+                        <Setter Target="scrGaleria.(Grid.Column)" Value="1"/>
+                        <Setter Target="scrGaleria.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="pepe1.(Grid.Row)" Value="0"/>
+                        <Setter Target="pepe1.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe2.(Grid.Row)" Value="0"/>
+                        <Setter Target="pepe2.(Grid.Column)" Value="1"/>
+                        <Setter Target="pepe3.(Grid.Row)" Value="0"/>
+                        <Setter Target="pepe3.(Grid.Column)" Value="2"/>
+                        <Setter Target="pepe4.(Grid.Row)" Value="1"/>
+                        <Setter Target="pepe4.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe5.(Grid.Row)" Value="1"/>
+                        <Setter Target="pepe5.(Grid.Column)" Value="1"/>
+                        <Setter Target="pepe6.(Grid.Row)" Value="1"/>
+                        <Setter Target="pepe6.(Grid.Column)" Value="2"/>
+                        <Setter Target="pepe7.(Grid.Row)" Value="2"/>
+                        <Setter Target="pepe7.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe8.(Grid.Row)" Value="2"/>
+                        <Setter Target="pepe8.(Grid.Column)" Value="1"/>
+                        <Setter Target="pepe9.(Grid.Row)" Value="2"/>
+                        <Setter Target="pepe9.(Grid.Column)" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Pequeño">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="botones.(Grid.Row)" Value="0"/>
+                        <Setter Target="botones.(Grid.Column)" Value="0"/>
+                        <Setter Target="botones.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="botones.Orientation" Value="Horizontal"/>
+                        <Setter Target="scrGaleria.(Grid.Row)" Value="1"/>
+                        <Setter Target="scrGaleria.(Grid.Column)" Value="0"/>
+                        <Setter Target="scrGaleria.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="pepe1.(Grid.Row)" Value="0"/>
+                        <Setter Target="pepe1.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe2.(Grid.Row)" Value="1"/>
+                        <Setter Target="pepe2.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe3.(Grid.Row)" Value="2"/>
+                        <Setter Target="pepe3.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe4.(Grid.Row)" Value="3"/>
+                        <Setter Target="pepe4.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe5.(Grid.Row)" Value="4"/>
+                        <Setter Target="pepe5.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe6.(Grid.Row)" Value="5"/>
+                        <Setter Target="pepe6.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe7.(Grid.Row)" Value="6"/>
+                        <Setter Target="pepe7.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe8.(Grid.Row)" Value="7"/>
+                        <Setter Target="pepe8.(Grid.Column)" Value="0"/>
+                        <Setter Target="pepe9.(Grid.Row)" Value="8"/>
+                        <Setter Target="pepe9.(Grid.Column)" Value="0"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Name="botones" Background="LightBlue">
+            <AppBarButton Icon="AddFriend" Label="Añadir"/>
+            <AppBarButton Icon="Add" Label="Añadir"/>
+            <AppBarButton Icon="Target" Label="Objetivo"/>
+            <AppBarButton Icon="Go" Label="Ir"/>
+        </StackPanel>
+
+        <ScrollViewer Name="scrGaleria" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Height="auto">
+            <Grid Name="Galeria">
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Image Name="pepe1" Source="Assets/pepe1.jpg" ></Image>
+                <Image Name="pepe2" Source="Assets/pepe2.jpg" ></Image>
+                <Image Name="pepe3" Source="Assets/pepe3.jpg" ></Image>
+                <Image Name="pepe4" Source="Assets/pepe4.jpg" ></Image>
+                <Image Name="pepe5" Source="Assets/pepe5.jpg" ></Image>
+                <Image Name="pepe6" Source="Assets/pepe6.jpg" ></Image>
+                <Image Name="pepe7" Source="Assets/pepe7.jpg" ></Image>
+                <Image Name="pepe8" Source="Assets/pepe8.jpg" ></Image>
+                <Image Name="pepe9" Source="Assets/pepe9.jpg" ></Image>
+
+            </Grid>
+        </ScrollViewer>
+
+
+    </Grid>
+</Page>
