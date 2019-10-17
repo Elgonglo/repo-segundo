@@ -1,0 +1,29 @@
+﻿@model _04_PasarDatosDeLaVistaAlControlador.Models.clsPersona
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    <div> 
+        <form method="post">
+            <p>
+                <label>Nombre: </label>
+            <input type="text" name="nombre" value="@Model.nombre" />
+                <label>Apellido: </label>
+            @Html.TextBox("apellido",@Model.apellido)
+                <label>Fecha: </label>
+                @Html.TextBoxFor(m => m.fecha)
+            </p>
+            
+            <input type="submit" name="enviar" />
+        </form>
+    </div>
+</body>
+</html>
