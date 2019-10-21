@@ -84,6 +84,17 @@
             <ListBoxItem Content="ballena"></ListBoxItem>
             <ListBoxItem Content="delfin"></ListBoxItem>
         </ListBox>
+        <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2">
+            <Slider Name="sld" TickFrequency="10" TickPlacement="BottomRight" ></Slider>
+            <ProgressBar Value="{Binding ElementName=sld, Path=Value, Mode=OneWay}" Height="25" Width="500" HorizontalAlignment="Right" ></ProgressBar>
+        </StackPanel>
+        <CalendarView Grid.Row="3" Grid.Column="0"></CalendarView>
+        <CalendarDatePicker Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center"></CalendarDatePicker>
+        <DatePicker Grid.Row="3" Grid.Column="2"></DatePicker>
+        <StackPanel Grid.Row="3" Grid.Column="3">
+            <Button Content="Hola que pasa" Margin="0,0,0,10"></Button>
+            <Button Content="Validaciones"></Button>
+        </StackPanel>
     </Grid>
     
 </Page>
