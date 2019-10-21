@@ -1,0 +1,89 @@
+﻿<Page
+    x:Class="_10_EjercicioControles.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_10_EjercicioControles"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <Button>Cancel</Button>
+            <Button>Default</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <RadioButton GroupName="rbtn1" Foreground="Green">
+                <RadioButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE73E;"></FontIcon>
+                    <TextBlock Text="yes"></TextBlock>
+                    </StackPanel>
+                    
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton Foreground="Red">
+                no
+            </RadioButton>
+            <RadioButton>
+                maybe
+            </RadioButton>
+            <Button>go</Button>
+        </StackPanel>
+        <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center">go 2</Button>
+        <Pivot Grid.Row="1" Grid.Column="0">
+            <PivotItem>
+                <PivotItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Econoima"></TextBlock>
+                        <SymbolIcon Symbol="Home"/>
+                    </StackPanel>
+                </PivotItem.Header>
+                <PivotItem.Content>
+                    <StackPanel>
+                        <CheckBox Content="Setting One"/>
+                        <CheckBox Content="Setting Two"/>
+                        <CheckBox Content="Setting Three"/>
+                    </StackPanel>
+                </PivotItem.Content>
+            </PivotItem>
+            <PivotItem Header="Tab Two"></PivotItem>
+            <PivotItem Header="Tab Three"></PivotItem>
+        </Pivot>
+        
+        <TextBox Grid.Row="1" Grid.Column="2" AcceptsReturn="True" IsSpellCheckEnabled="True" VerticalAlignment="Center"/>
+        <PasswordBox Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="1" VerticalAlignment="Center"/>
+        <ComboBox PlaceholderText="Selecciona" Grid.Row="2" Grid.Column="1">
+            <ComboBoxItem Content="Patatas"></ComboBoxItem>
+            <ComboBoxItem Content="Filete"></ComboBoxItem>
+            <ComboBoxItem Content="sushi"></ComboBoxItem>
+            <ComboBoxItem Content="ensalada"></ComboBoxItem>
+            <ComboBoxItem Content="pescado"></ComboBoxItem>
+        </ComboBox>
+        <ListBox Grid.Row="2" Grid.Column="0">
+            <ListBoxItem Content="Perro"></ListBoxItem>
+            <ListBoxItem Content="Gato"></ListBoxItem>
+            <ListBoxItem Content="Comadreja"></ListBoxItem>
+            <ListBoxItem Content="caballo"></ListBoxItem>
+            <ListBoxItem Content="cerdo"></ListBoxItem>
+            <ListBoxItem Content="pez"></ListBoxItem>
+            <ListBoxItem Content="ballena"></ListBoxItem>
+            <ListBoxItem Content="delfin"></ListBoxItem>
+        </ListBox>
+    </Grid>
+    
+</Page>
