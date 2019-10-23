@@ -29,14 +29,9 @@
         <TextBlock Grid.Row="0"  Grid.ColumnSpan="3" HorizontalAlignment="Center">Your Data</TextBlock>
         <TextBlock Margin="10" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">Name:</TextBlock>
         <TextBox Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Name="tbName" Grid.Column="1"></TextBox>
-        <TextBlock Grid.Row="1" Name="tblNameError" Grid.Column="2"   Foreground="Red"></TextBlock>
         <TextBlock Margin="10" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">Surname:</TextBlock>
-        <TextBox Text="{Binding apellido,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Name="tbSurname" Grid.Column="1"></TextBox>
-        <TextBlock Grid.Row="2" Name="tblSurnameError" Grid.Column="2"   Foreground="Red"></TextBlock>
-        <TextBlock Margin="10" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">Date of birth:</TextBlock>
-        <TextBox Text="{Binding fecha,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Name="tbDate" Grid.Column="1"></TextBox>
-        <TextBlock Grid.Row="3" Name="tblDateError" Grid.Column="2" Foreground="Red"></TextBlock>
-        <Button Grid.Row="4" Name="btnSend" Grid.Column="1" HorizontalAlignment="Left" Click="BtnSend_Click">Send</Button>
+        <TextBox Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Name="tbSurname" Grid.Column="1"></TextBox>
+        
     </Grid>
 
 </Page>

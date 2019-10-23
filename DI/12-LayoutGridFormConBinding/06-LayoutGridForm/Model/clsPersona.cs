@@ -1,29 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace _06_LayoutGridForm.Models
 {
-    public class clsPersona
+    public class clsPersona : INotifyPropertyChanged
     {
-        
       
         //propiedades publicas
         public clsPersona()
         {
-            nombre = "Gonzalo";
-            apellido = "Gomez";
-        }
-        public clsPersona(String nombre,String apellido,DateTime fecha)
-        {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.fecha = fecha;
-        }
+            this.nombre="Gonzalo";
+         }
         
 
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public DateTime fecha { get; set; }
+        private string _nombre;
+
+        public string nombre {
+
+            get {
+
+                return _nombre;
+
+            }
+            set {
+
+                _nombre = value;
+                NotifyPropertyChanged();
+
+            }
+
+        }
+
+
+
+        
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 }

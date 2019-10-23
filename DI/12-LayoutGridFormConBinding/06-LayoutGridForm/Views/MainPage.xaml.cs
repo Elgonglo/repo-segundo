@@ -32,60 +32,6 @@ namespace _06_LayoutGridForm
 
         }
           
-        /// <summary>
-        /// Boton de enviar que validará todo
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnSend_Click(object sender, RoutedEventArgs e)
-        {
-            clsPersona persona = new clsPersona();
-            DateTime cumple = new DateTime();
-            persona.nombre = tbName.Text;
-            persona.apellido = tbSurname.Text;
-            
-
-            if (string.IsNullOrEmpty(persona.nombre))
-            {
-                tblNameError.Text = "Esta vacio";
-            }
-            else
-            {
-                tblNameError.Text = "";
-            }
-
-            if (string.IsNullOrEmpty(persona.apellido))
-            {
-                tblSurnameError.Text = "Esta vacio";
-            }
-            else
-            {
-                tblSurnameError.Text = "";
-            }
-
-           
-             if (string.IsNullOrEmpty(tbDate.Text))
-            {
-                tblDateError.Text = "La Fecha Esta Vacia";
-            }
-            else
-            {
-                if(DateTime.TryParse(tbDate.Text, out cumple))
-                {
-                    if (cumple > DateTime.Now)
-                    {
-                        tblDateError.Text = "La Fecha Es Incorrecto";
-                    }
-                    else
-                    {
-                        persona.fecha = cumple;
-                        tblDateError.Text = "";
-                    }
-                    
-                }
-               
-                
-            }
-        }
+     
     }
 }
