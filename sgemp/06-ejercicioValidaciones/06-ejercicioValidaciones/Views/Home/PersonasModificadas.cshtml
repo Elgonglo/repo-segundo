@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PersonasModificadas</title>
+</head>
+<body>
+    Nombre: @Html.Display("nombre") <br />
+    Apellidos: @Html.Display("apellido") <br />
+    Fecha: @Html.Display("fecha") <br />
+    Direccion: @Html.Display("direccion")<br />
+    Telefono: @Html.Display("telefono")<br />
+    @Html.ActionLink("Atras","Index")
+</body>
+</html>
