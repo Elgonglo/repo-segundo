@@ -14,26 +14,28 @@ namespace _08_CRUD_personas_entities
         {
             this.nombre="Gonzalo";
             this.apellido = "Gomez";
-         }
-        public clsPersona(String name,String surname)
+            IDdepartamento = 1;
+        }
+        public clsPersona(String nombre, String apellido, DateTime fecha, int IDdepartamento)
         {
-            this.nombre = name;
-            this.apellido = surname;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.fecha = fecha;
+            this.IDdepartamento = IDdepartamento;
         }
 
-        private string _nombre;
-        private string _apellido;
+
 
         public string nombre {
 
             get {
 
-                return _nombre;
+                return nombre;
 
             }
             set {
 
-                _nombre = value;
+                nombre = value;
                 NotifyPropertyChanged();
 
             }
@@ -45,20 +47,36 @@ namespace _08_CRUD_personas_entities
             get
             {
 
-                return _apellido;
+                return apellido;
 
             }
             set
             {
 
-                _apellido = value;
+                apellido = value;
                 NotifyPropertyChanged();
 
             }
 
         }
 
-
+        public DateTime fecha { 
+            get {
+                return fecha;
+            }
+            set {
+                fecha = value;
+                NotifyPropertyChanged();
+            } 
+        }
+        public int IDdepartamento { 
+            get {
+                return IDdepartamento;       
+            } 
+            set {
+                IDdepartamento = value;
+                NotifyPropertyChanged();
+            } }
 
 
 
