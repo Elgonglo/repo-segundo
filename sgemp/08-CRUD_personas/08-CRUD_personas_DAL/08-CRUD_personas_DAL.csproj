@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Connection\clsMyConnection.cs" />
     <Compile Include="Lists\clsListadoPersonasDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

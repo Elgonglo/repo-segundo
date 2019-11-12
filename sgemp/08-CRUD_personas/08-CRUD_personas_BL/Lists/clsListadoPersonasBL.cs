@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace _08_CRUD_personas_BL.Lists
 {
-    public class ListaPersonas
+    public class clsListadoPersonasBL
     {
+        //mejor un list
         public static IEnumerable<clsPersona> ListadoPersonas()
         {
+            //instanciar una clase listadoP
             return clsListadoPersonasDAL.listaPersonas();
         }
     }

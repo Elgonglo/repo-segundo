@@ -10,33 +10,32 @@ namespace _08_CRUD_personas_DAL.Lists
 {
     public class clsListadoPersonasDAL
     {
-        //TODO: Funcion que devuelva un listado de personas
-
+       
         public static IEnumerable<clsPersona> listaPersonas()
         {
             List<clsPersona> lista = new List<clsPersona>();
             clsMyConnection conexion = new clsMyConnection();
             SqlConnection connection = conexion.getConnection();
             SqlCommand sqlcommand = new SqlCommand();
-            SqlDataReader miLector;
+            SqlDataReader Lector;
             clsPersona persona;
 
             sqlcommand.CommandText = "SELECT * FROM PD_Personas";
             sqlcommand.Connection = connection;
-            miLector = sqlcommand.ExecuteReader();
+            //aqui un try catch
+            Lector = sqlcommand.ExecuteReader();
 
-            if (miLector.HasRows)
+            if (Lector.HasRows)
             {
-                while (miLector.Read())
+                while (Lector.Read())
                 {
                     persona = new clsPersona();
-                    //persona.fecha = (DateTime)miLector["FechaNacimientoPersona"];
-                    persona.nombre = (string)miLector["NombrePersona"];
-                    persona.apellido = (string)miLector["ApellidosPersona"];
+                    persona.nombre = (string)Lector["NombrePersona"];
+                    persona.apellido = (string)Lector["ApellidosPersona"];
                     lista.Add(persona);
                 }
             }
-
+            //cerrar datareader
             conexion.closeConnection(ref connection);
 
             return lista;

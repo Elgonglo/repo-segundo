@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace _08_CRUD_personas_entities
 {
-    public class clsPersona : INotifyPropertyChanged
+    public class clsPersona 
     {
-      
-        //propiedades publicas
+              
         public clsPersona()
         {
             this.nombre="Gonzalo";
             this.apellido = "Gomez";
-            IDdepartamento = 1;
+            IDdepartamento = 0;
         }
         public clsPersona(String nombre, String apellido, DateTime fecha, int IDdepartamento)
         {
@@ -25,68 +25,16 @@ namespace _08_CRUD_personas_entities
         }
 
 
+        [Required]
+        public string nombre { get; set; }
 
-        public string nombre {
+        public int IDpersona { get; }
+        public string apellido { get; set; }
+       
 
-            get {
+        public DateTime fecha { get; set; }
+            
+        public int IDdepartamento { get; set; }
 
-                return nombre;
-
-            }
-            set {
-
-                nombre = value;
-                NotifyPropertyChanged();
-
-            }
-
-        }
-        public string apellido
-        {
-
-            get
-            {
-
-                return apellido;
-
-            }
-            set
-            {
-
-                apellido = value;
-                NotifyPropertyChanged();
-
-            }
-
-        }
-
-        public DateTime fecha { 
-            get {
-                return fecha;
-            }
-            set {
-                fecha = value;
-                NotifyPropertyChanged();
-            } 
-        }
-        public int IDdepartamento { 
-            get {
-                return IDdepartamento;       
-            } 
-            set {
-                IDdepartamento = value;
-                NotifyPropertyChanged();
-            } }
-
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
     }
 }
