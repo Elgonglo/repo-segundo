@@ -11,7 +11,10 @@ namespace CRUD_personas_UI.Controllers
 {
     public class PersonaController : Controller
     {
-        // GET: Index
+        /// <summary>
+        /// Se va a la lista
+        /// </summary>
+        /// <returns></returns>
         public ActionResult list()
         {
             try
@@ -24,7 +27,10 @@ namespace CRUD_personas_UI.Controllers
             }
 
         }
-
+        /// <summary>
+        /// se va a la lista crear
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             return View();

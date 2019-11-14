@@ -39,7 +39,7 @@ namespace CRUD_personas_DAL.Services
             return filasAfectadas;
         }
         /// <summary>
-        /// Aqui se borra a la persona por el id pasado por aprametro
+        /// Aqui se borra a la persona por el id pasado por parametro 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
