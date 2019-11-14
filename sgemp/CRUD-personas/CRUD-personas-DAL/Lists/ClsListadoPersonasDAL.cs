@@ -36,6 +36,7 @@ namespace CRUD_personas_DAL.Lists
                         persona.apellido = (string)miLector["ApellidosPersona"];
                         persona.IDdepartamento = (int)miLector["IDDepartamento"];
                         persona.telefono = (string)miLector["TelefonoPersona"];
+                        persona.idPersona = (int)miLector["IdPersona"];
                         listado.Add(persona);
                     }
                 }

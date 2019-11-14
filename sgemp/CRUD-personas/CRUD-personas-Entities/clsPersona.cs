@@ -13,11 +13,7 @@ namespace _CRUD_personas_Entities
               
         public clsPersona()
         {
-            idPersona = 0;
-            nombre = "";
-            apellido = "";
-            IDdepartamento = 0;
-            telefono = "";
+            
         }
         public clsPersona(int IDpersona, String nombre, String apellido, DateTime fecha, String telefono, int IDdepartamento)
         {
@@ -49,7 +45,7 @@ namespace _CRUD_personas_Entities
         [Display(Name = "Telefono")]
         public String telefono { get; set; }
 
-        //[HiddenInput(DisplayValue = false)] 
+        [HiddenInput(DisplayValue = false)] 
         public int idPersona { get; set; }
 
         public byte[] foto { get; set; }
