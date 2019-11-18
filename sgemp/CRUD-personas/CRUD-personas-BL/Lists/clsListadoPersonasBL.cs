@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _CRUD_personas_BL
+namespace _CRUD_personas_BL.Lists
 {
     public class clsListadoPersonasBL
     {

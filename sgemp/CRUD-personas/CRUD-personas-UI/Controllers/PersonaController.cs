@@ -1,6 +1,8 @@
 ﻿using _CRUD_personas_BL;
+using _CRUD_personas_BL.Lists;
 using _CRUD_personas_Entities;
 using CRUD_personas_BL.Services;
+using CRUD_personas_UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +35,8 @@ namespace CRUD_personas_UI.Controllers
         /// <returns></returns>
         public ActionResult Create()
         {
-            return View();
+            clsPersonaConListaDepartamentos personaConDepartamento = new clsPersonaConListaDepartamentos();
+            return View(personaConDepartamento);
         }
 
         [HttpPost]
@@ -41,15 +44,14 @@ namespace CRUD_personas_UI.Controllers
         {
             ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
             List<clsPersona> lista = new List<clsPersona>();
-            int filas = 0;
 
             if (ModelState.IsValid)
             { 
                 try
                 {
-                    filas = manejadora.insertarPersona_BL(persona);
-                    ViewData["FilasAfectadas"] = $"Se ha insertado {filas}";
-                    return View("list",clsListadoPersonasBL.ListadoPersonas()); 
+                    manejadora.insertarPersona_BL(persona);
+                    ViewData["Mensaje"] = $"Se ha insertado Correctamente";   
+                    return View("list"); 
                 }
                 catch (Exception e)
                 {

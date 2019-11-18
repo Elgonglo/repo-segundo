@@ -1,9 +1,9 @@
 ﻿using _17_CRUD_Personas_UWP_DAL.Connection;
 using _17_CRUD_Personas_UWP_Entities;
-using System;
-using System.Collections.Generic;
+using Windows.System;
+using Windows.System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
+using Windows.System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 

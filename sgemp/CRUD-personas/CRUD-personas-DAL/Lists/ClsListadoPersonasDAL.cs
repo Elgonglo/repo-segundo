@@ -13,12 +13,12 @@ namespace CRUD_personas_DAL.Lists
     {
         public static IEnumerable<clsPersona> listaPersonas()
         {
+            clsPersona persona;
             List<clsPersona> listado = new List<clsPersona>();
             clsMyConnection conexion = new clsMyConnection();
             SqlConnection connection = conexion.getConnection();
             SqlCommand sqlcommand = new SqlCommand();
             SqlDataReader miLector = null;
-            clsPersona persona;
 
             sqlcommand.CommandText = "SELECT * FROM PD_Personas";
             sqlcommand.Connection = connection;
@@ -50,9 +50,6 @@ namespace CRUD_personas_DAL.Lists
                 miLector.Close();
                 conexion.closeConnection(ref connection);
             }
-
-
-
             return listado;
         }
     }

@@ -1,4 +1,4 @@
-﻿@model _CRUD_personas_Entities.clsPersona
+﻿@model CRUD_personas_UI.Models.clsPersonaConListaDepartamentos
 
 @{
     ViewBag.Title = "Create";
@@ -41,10 +41,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IDdepartamento, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.IDdepartamento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(x => Model.IDdepartamento, new SelectList(Model.Departamentos, "id", "nombre", Model.IDdepartamento))
                 @Html.ValidationMessageFor(model => model.IDdepartamento, "", new { @class = "text-danger" })
             </div>
         </div>
+
+       
 
         <div class="form-group">
             @Html.LabelFor(model => model.telefono, htmlAttributes: new { @class = "control-label col-md-2" })

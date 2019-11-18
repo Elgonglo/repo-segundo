@@ -11,7 +11,7 @@ namespace CRUD_personas_BL.Lists
     public class clsListadoDepartamentosBL
     {
         
-        public static IEnumerable<clsDepartamento> listadoDepartamentosDAL()
+        public static IEnumerable<clsDepartamento> listadoDepartamentosBL()
         {
             return clsListadoDepartamentosDAL.listadoDepartamentos_DAL();
         }

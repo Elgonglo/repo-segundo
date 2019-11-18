@@ -79,8 +79,8 @@ namespace CRUD_personas_DAL.Services
             SqlConnection miConexion = new SqlConnection();
             SqlCommand elComando = new SqlCommand();
             SqlDataReader miLector = null;
-            clsMyConnection gestConexion = new clsMyConnection();
-            miConexion = gestConexion.getConnection();
+            clsMyConnection conexion = new clsMyConnection();
+            miConexion = conexion.getConnection();
             elComando.CommandText = "SELECT * FROM PD_Personas WHERE IdPersona = @id";
             SqlParameter param = new SqlParameter();
             param.ParameterName = "@id";
@@ -119,7 +119,7 @@ namespace CRUD_personas_DAL.Services
                 }
             }
             miLector.Close();
-            gestConexion.closeConnection(ref miConexion);
+            conexion.closeConnection(ref miConexion);
             return persona;
         }
     }
