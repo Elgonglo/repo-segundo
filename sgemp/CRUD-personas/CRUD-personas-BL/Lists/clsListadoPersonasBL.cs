@@ -11,7 +11,7 @@ namespace _CRUD_personas_BL.Lists
     public class clsListadoPersonasBL
     {
         //mejor un list
-        public static IEnumerable<clsPersona> ListadoPersonas()
+        public IEnumerable<clsPersona> ListadoPersonas()
         {
             //instanciar una clase listadoP
             return ClsListadoPersonasDAL.listaPersonas();

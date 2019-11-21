@@ -21,7 +21,8 @@ namespace CRUD_personas_UI.Controllers
         {
             try
             {
-                return View(clsListadoPersonasBL.ListadoPersonas());
+                clsListadoPersonasBL listado = new clsListadoPersonasBL();
+                return View(listado.ListadoPersonas());
             }
             catch (Exception e)
             {
@@ -88,7 +89,9 @@ namespace CRUD_personas_UI.Controllers
                 return View("Error");
             }
 
-            return View("list", clsListadoPersonasBL.ListadoPersonas());
+            clsListadoPersonasBL listado = new clsListadoPersonasBL();
+
+            return View("list", listado.ListadoPersonas());
         }
     }
 }
