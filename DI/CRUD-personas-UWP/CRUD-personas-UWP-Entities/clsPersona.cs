@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Web.Mvc;
+//using System.Web.Mvc;
 
 namespace _CRUD_personas_Entities
 {
@@ -44,7 +44,7 @@ namespace _CRUD_personas_Entities
         [Display(Name = "Telefono")]
         public String telefono { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
+       // [HiddenInput(DisplayValue = false)]
         public int idPersona { get; set; }
 
         public byte[] foto { get; set; }

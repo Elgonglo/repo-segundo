@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:vm="using:CRUD_personas_UWP_UI.ViewModel"
+    xmlns:Windows10version1809="using:Windows.UI.Xaml.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.DataContext>
         <vm:ClsMainPageVM></vm:ClsMainPageVM>
@@ -23,7 +24,7 @@
         <StackPanel x:Name="sp" Orientation="Horizontal" Background="Gray" RelativePanel.Below="menu">
             <AppBarButton x:Name="btnAdd" Icon="Add" Label="Nuevo"></AppBarButton>
             <AppBarButton x:Name="btnSave" Icon="Save" Label="Guardar"></AppBarButton>
-            <AppBarButton x:Name="btnRefresh" Icon="Refresh" Label="Actualizar"></AppBarButton>
+            <AppBarButton x:Name="btnRefresh" Icon="Refresh" Label="Refrescar"></AppBarButton>
             <AppBarButton x:Name="btnSearch" Command="{Binding BuscarCommand}" Icon="Find" Label="Buscar"></AppBarButton>
             <TextBox PlaceholderText="Filtrar busqueda" Text=""></TextBox>
         </StackPanel>
@@ -60,11 +61,11 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="tblNombre" Grid.Column="0" Grid.Row="0" Margin="10">Nombre:</TextBlock>
-            <TextBlock x:Name="tblApellidos" Grid.Column="0" Grid.Row="1" Margin="10">Apellidos:</TextBlock>
-            <TextBlock x:Name="tblFechaNacimiento" Grid.Column="0" Grid.Row="2" Margin="10">Fecha de Nacimiento:</TextBlock>
-            <TextBlock x:Name="tblTelefono" Grid.Column="0" Grid.Row="3" Margin="10">Teléfono:</TextBlock>
-            <TextBlock x:Name="tblDireccion" Grid.Column="0" Grid.Row="4" Margin="10">Dirección:</TextBlock>
+            <TextBlock x:Name="tblNombre" Grid.Column="0" Grid.Row="0" Margin="10" Text="Nombre:"></TextBlock>
+            <TextBlock x:Name="tblApellidos" Grid.Column="0" Grid.Row="1" Margin="10" Text="Apellidos:"></TextBlock>
+            <TextBlock x:Name="tblFechaNacimiento" Grid.Column="0" Grid.Row="2" Margin="10" Text="Fecha de Nacimiento:"></TextBlock>
+            <TextBlock x:Name="tblTelefono" Grid.Column="0" Grid.Row="3" Margin="10" Text="Teléfono:"></TextBlock>
+            <TextBlock x:Name="tblDireccion" Grid.Column="0" Grid.Row="4" Margin="10" Text="Dirección:"></TextBlock>
 
             <TextBox x:Name="tbNombre" Grid.Column="1" Grid.Row="0" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay}"></TextBox>
             <TextBox x:Name="tbApellidos" Grid.Column="1" Grid.Row="1" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.apellido, Mode=TwoWay}"></TextBox>
