@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _CRUD_personas_Entities;
+using CRUD_personas_UWP_UI.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +27,21 @@ namespace CRUD_personas_UWP_UI
         public MainPage()
         {
             this.InitializeComponent();
+            this.ViewModel = (ClsMainPageVM)this.DataContext;
         }
+        public ClsMainPageVM ViewModel { get; }
+        /// <summary>
+        /// Muestra el menu con el click derecho
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListaElementos_RightTapped(object sender, RightTappedRoutedEventArgs e)
+        {
+            ListView listView = (ListView)sender;
+            menuFlyout.ShowAt(listView, e.GetPosition(listView));
+            clsPersona persona = (clsPersona)((FrameworkElement)e.OriginalSource).DataContext;
+            this.listaElementos.SelectedItem = persona;
+        }
+
     }
 }

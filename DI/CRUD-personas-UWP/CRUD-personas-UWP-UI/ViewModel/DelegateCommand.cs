@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace CRUD_personas_UWP_UI.ViewModel
 {
-    class DelegateCommand : ICommand
+    public class DelegateCommand : ICommand
     {
         private readonly Action _execute;
 

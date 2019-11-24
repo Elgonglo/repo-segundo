@@ -120,8 +120,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Listado\clsListadoDepartamentosBL.cs" />
     <Compile Include="Listado\clsListadoPersonasBL.cs" />
+    <Compile Include="Manejadora\manejadoraBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\CRUD_personas_UWP_BL.rd.xml" />
   </ItemGroup>
@@ -140,9 +141,7 @@
       <Name>CRUD-personas-UWP-Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Manejadora\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

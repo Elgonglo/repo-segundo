@@ -120,8 +120,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="clsDepartamentos.cs" />
+    <Compile Include="clsDepartamento.cs" />
     <Compile Include="clsPersona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\CRUD_personas_UWP_Entities.rd.xml" />

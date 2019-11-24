@@ -19,7 +19,6 @@ namespace CRUD_personas_UWP_DAL.Conexion
         //"server=gonglo.database.windows.net;database=PersonasDB;uid=gonglo;pwd=1q2w3e4r.;"
         public clsMyConnection()
         {
-            // this.server = "(local)";
             this.server = "gonglo.database.windows.net";
 
             this.dataBase = "PersonasDB";
@@ -28,7 +27,6 @@ namespace CRUD_personas_UWP_DAL.Conexion
             this.pass = "1q2w3e4r.";
 
         }
-        //Con parámetros por si quisiera cambiar las conexiones
         public clsMyConnection(String server, String database, String user, String pass)
         {
             this.server = server;
@@ -41,10 +39,10 @@ namespace CRUD_personas_UWP_DAL.Conexion
         //METODOS
 
         /// <summary>
-        /// Método que abre una conexión con la base de datos
+        /// Metodo para abrir la conexion con la base de datos
         /// </summary>
         /// <pre></pre>
-        /// <returns>Una conexión con la base de datso</returns>
+        /// <returns>devuelve la conexion con la base de datos</returns>
         public SqlConnection getConnection()
         {
             SqlConnection connection = new SqlConnection();
@@ -65,14 +63,11 @@ namespace CRUD_personas_UWP_DAL.Conexion
 
         }
 
-
-
-
         /// <summary>
-        /// Este metodo cierra una conexión con la Base de datos
+        /// cierra la copnexion con la base de datos
         /// </summary>
         /// <post></post>
-        /// <param name="connection">La entrada es la conexión a cerrar
+        /// <param name="connection">la conexión que vas a cerrar
         /// </param>
         public void closeConnection(ref SqlConnection connection)
         {

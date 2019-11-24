@@ -14,26 +14,28 @@
     </Page.DataContext>
     <RelativePanel>
         <Windows10version1809:MenuBar Name="menu">
-            <Windows10version1809:MenuBarItem Title="Editar">
+            <Windows10version1809:MenuBarItem Title="MENU">
                 <MenuFlyoutSubItem Text="Editar">
                     <MenuFlyoutItem Text="Eliminar" Command="{Binding EliminarCommand}"/>
+                    <MenuFlyoutItem Text="Añadir" Command="{Binding NuevoCommand}"/>
+                    <MenuFlyoutItem Text="Guardar" Command="{Binding GuardarCommand}"/>
                 </MenuFlyoutSubItem>
             </Windows10version1809:MenuBarItem>
         </Windows10version1809:MenuBar>
 
         <StackPanel x:Name="sp" Orientation="Horizontal" Background="Gray" RelativePanel.Below="menu">
-            <AppBarButton x:Name="btnAdd" Icon="Add" Label="Nuevo"></AppBarButton>
-            <AppBarButton x:Name="btnSave" Icon="Save" Label="Guardar"></AppBarButton>
-            <AppBarButton x:Name="btnRefresh" Icon="Refresh" Label="Refrescar"></AppBarButton>
+            <AppBarButton x:Name="btnAdd" Icon="Add" Label="Nuevo" Command="{Binding NuevoCommand,Mode=TwoWay}"></AppBarButton>
+            <AppBarButton x:Name="btnRefresh" Icon="Refresh" Label="Refrescar" Command="{Binding RefreshCommand}"></AppBarButton>
+            <AppBarButton x:Name="btnSave" Icon="Save" Label="Guardar" Command="{Binding GuardarCommand}"></AppBarButton>
             <AppBarButton x:Name="btnSearch" Command="{Binding BuscarCommand}" Icon="Find" Label="Buscar"></AppBarButton>
-            <TextBox PlaceholderText="Filtrar busqueda" Text=""></TextBox>
+            <TextBox PlaceholderText="Escribe para Buscar" Text="{Binding TextoBuscar,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
 
-        <ListView Name="listaElementos" BorderBrush="Black" BorderThickness="1" RelativePanel.Below="sp"
+        <ListView Name="listaElementos"  BorderBrush="Black" BorderThickness="1" RelativePanel.Below="sp" RightTapped="ListaElementos_RightTapped"
                   ItemsSource="{Binding ListadoPersonas, Mode=TwoWay}" SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}">
             <FlyoutBase.AttachedFlyout>
                 <MenuFlyout x:Name="menuFlyout">
-                    <MenuFlyoutItem Text="Delete"/>
+                    <MenuFlyoutItem Text="Delete" Command="{Binding EliminarCommand}"/>
                 </MenuFlyout>
             </FlyoutBase.AttachedFlyout>
             <ListView.ItemTemplate>
@@ -65,16 +67,19 @@
             <TextBlock x:Name="tblApellidos" Grid.Column="0" Grid.Row="1" Margin="10" Text="Apellidos:"></TextBlock>
             <TextBlock x:Name="tblFechaNacimiento" Grid.Column="0" Grid.Row="2" Margin="10" Text="Fecha de Nacimiento:"></TextBlock>
             <TextBlock x:Name="tblTelefono" Grid.Column="0" Grid.Row="3" Margin="10" Text="Teléfono:"></TextBlock>
-            <TextBlock x:Name="tblDireccion" Grid.Column="0" Grid.Row="4" Margin="10" Text="Dirección:"></TextBlock>
 
             <TextBox x:Name="tbNombre" Grid.Column="1" Grid.Row="0" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay}"></TextBox>
             <TextBox x:Name="tbApellidos" Grid.Column="1" Grid.Row="1" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.apellido, Mode=TwoWay}"></TextBox>
             <TextBox x:Name="tbFechaNacimiento" Grid.Column="1" Grid.Row="2" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.fecha , Mode=TwoWay}"></TextBox>
             <TextBox x:Name="tbTelefono" Grid.Column="1" Grid.Row="3" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.telefono, Mode=TwoWay}"></TextBox>
-
-            <ScrollViewer Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
-                <TextBox x:Name="tbDireccion" Margin="10" Background="White"></TextBox>
-            </ScrollViewer>
+            <ComboBox Grid.Column="0" Grid.Row="6" ItemsSource="{Binding ListadoDepartamentos}"
+                      SelectedValuePath="ID" SelectedValue="{Binding PersonaSeleccionada.IDdepartamento, Mode=TwoWay}" PlaceholderText="Departamento" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=nombre, Mode=TwoWay}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </Grid>
     </RelativePanel>
 </Page>
