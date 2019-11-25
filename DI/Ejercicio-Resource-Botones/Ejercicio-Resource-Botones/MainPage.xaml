@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="Ejercicio_Resource_Botones.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ejercicio_Resource_Botones"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <!--Aqui se le agrega el diccionario de recursos.-->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="cssBotones.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <LinearGradientBrush x:Key="buttonBackground">
+                <GradientStop Offset="0" Color="Silver"/>
+                <GradientStop Offset="1" Color="Orange"/>
+            </LinearGradientBrush>
+        </ResourceDictionary>
+    </Page.Resources>
+    <StackPanel>
+        <Button Margin="10" Content="Boton 1" Background="{StaticResource buttonBackground}"></Button>
+        <Button Margin="10" Content="Boton 2" ></Button>
+        <Button Margin="10" Content="Boton 3" Background="{StaticResource buttonBackground2}"></Button>
+    </StackPanel>
+</Page>
