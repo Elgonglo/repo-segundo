@@ -8,6 +8,7 @@
         <GradientStop Offset="0" Color="Orange"/>
     </LinearGradientBrush>
 
+    <x:String x:Key="Hola">Hello world</x:String>
     <Style TargetType="Button">
         <Setter Property="FontFamily" Value="Segoe UI"></Setter>
         <Setter Property="Height" Value="200"></Setter>

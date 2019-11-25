@@ -21,7 +21,7 @@
     </Page.Resources>
     <StackPanel>
         <Button Margin="10" Content="Boton 1" Background="{StaticResource buttonBackground}"></Button>
-        <Button Margin="10" Content="Boton 2" ></Button>
-        <Button Margin="10" Content="Boton 3" Background="{StaticResource buttonBackground2}"></Button>
+        <Button Margin="10" Content="{StaticResource Hola}" ></Button>
+        <Button Margin="10"  Content="Boton 3" Background="{StaticResource buttonBackground2}"></Button>
     </StackPanel>
 </Page>
