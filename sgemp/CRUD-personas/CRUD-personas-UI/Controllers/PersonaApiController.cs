@@ -33,8 +33,9 @@ namespace CRUD_personas_UI.Controllers
         }
 
         // PUT: api/PersonaApi/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]clsPersona value)
         {
+            ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
         }
 
         // DELETE: api/PersonaApi/5
