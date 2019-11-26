@@ -15,7 +15,7 @@ namespace _CRUD_personas_Entities
         {
             
         }
-        public clsPersona(int IDpersona, String nombre, String apellido, DateTime fecha, String telefono, int IDdepartamento)
+        public clsPersona(int IDpersona, String nombre, String apellido, DateTime fecha, String telefono, int IDdepartamento, byte[] foto)
         {
             this.idPersona = IDpersona;
             this.nombre = nombre;
@@ -23,6 +23,7 @@ namespace _CRUD_personas_Entities
             this.fecha = fecha;
             this.telefono = telefono;
             this.IDdepartamento = IDdepartamento;
+            this.foto = foto;
         }
 
 

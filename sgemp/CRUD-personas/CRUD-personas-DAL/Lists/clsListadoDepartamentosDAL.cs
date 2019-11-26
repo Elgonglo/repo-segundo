@@ -11,7 +11,7 @@ namespace CRUD_personas_DAL.Lists
 {
    public class clsListadoDepartamentosDAL
     {
-        public static IEnumerable<clsDepartamento> listadoDepartamentos_DAL()
+        public static List<clsDepartamento> listadoDepartamentos_DAL()
         {
             List<clsDepartamento> listado = new List<clsDepartamento>();
             clsMyConnection conexion = new clsMyConnection();
@@ -32,7 +32,7 @@ namespace CRUD_personas_DAL.Lists
                         depart = new clsDepartamento();
                         if (!String.IsNullOrEmpty(miLector["NombreDepartamento"].ToString()))
                         {
-                            depart.nombre = (String)miLector["NombreDepartamento"];
+                            depart.Nombre = (String)miLector["NombreDepartamento"];
                         }
                         listado.Add(depart);
                     }

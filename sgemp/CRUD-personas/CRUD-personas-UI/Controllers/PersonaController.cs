@@ -93,5 +93,51 @@ namespace CRUD_personas_UI.Controllers
 
             return View("list", listado.ListadoPersonas());
         }
+        public ActionResult Edit(int id)
+        {
+            ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
+            clsPersona persona = manejadora.obtenerPersona(id);
+            clsPersonaConListaDepartamentos personaConDepartamentos = new clsPersonaConListaDepartamentos(persona);
+
+            return View(personaConDepartamentos);
+        }
+        [HttpPost]
+        public ActionResult Edit(clsPersonaConListaDepartamentos personaConDepartamentos)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
+                    if (manejadora.editarPersona(personaConDepartamentos.idPersona, personaConDepartamentos.nombre, personaConDepartamentos.apellido, personaConDepartamentos.telefono, personaConDepartamentos.fecha, personaConDepartamentos.IDdepartamento))
+                    {
+                        ViewBag.MensajePersonaModificada = "La persona se ha modificado correctamente.";
+                    }
+                    else
+                    {
+                        ViewBag.MensajePersonaModificada = "La persona no se ha podido modificar.";
+                    }
+
+                    return View(personaConDepartamentos);
+                }
+                catch (Exception e)
+                {
+                    return View("Error");
+                }
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult Details(int id)
+        {
+            ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
+            clsPersona clsPersona = manejadora.obtenerPersona(id);
+
+            clsPersonaConDepartamento personaConDepartamento = new clsPersonaConDepartamento(clsPersona);
+            return View(personaConDepartamento);
+        }
     }
 }

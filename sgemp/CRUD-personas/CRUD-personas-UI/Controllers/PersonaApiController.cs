@@ -20,9 +20,10 @@ namespace CRUD_personas_UI.Controllers
         }
 
         // GET: api/PersonaApi/5
-        public string Get(int id)
+        public clsPersona Get(int id)
         {
-            return "value";
+            ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
+            return manejadora.obtenerPersona(id);
         }
 
         // POST: api/PersonaApi
@@ -36,6 +37,7 @@ namespace CRUD_personas_UI.Controllers
         public void Put(int id, [FromBody]clsPersona value)
         {
             ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
+            manejadora.editarPersona(value.idPersona,value.nombre,value.apellido,value.telefono,value.fecha,value.IDdepartamento);
         }
 
         // DELETE: api/PersonaApi/5

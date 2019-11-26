@@ -2,6 +2,7 @@
 using _CRUD_personas_Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -122,5 +123,162 @@ namespace CRUD_personas_DAL.Services
             conexion.closeConnection(ref miConexion);
             return persona;
         }
+        public bool editarPersona(int id, String nombre, String apellidos, String telefono, DateTime fechaNacimiento, int idDepartamento)
+        {
+            bool Editado = true;
+            clsMyConnection clsMyConnection = new clsMyConnection();
+            try
+            {
+                SqlConnection connection = clsMyConnection.getConnection();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.CommandText = "UPDATE [dbo].[PD_Personas] SET NombrePersona = @Nombre, ApellidosPersona = @Apellidos, IDDepartamento = @IdDepartamento, FechaNacimientoPersona = @FechaNacimiento, TelefonoPersona = @Telefono WHERE IdPersona = @Id";
+                sqlCommand.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = id;
+                sqlCommand.Parameters.Add("@Nombre", System.Data.SqlDbType.VarChar).Value = nombre;
+                sqlCommand.Parameters.Add("@Apellidos", System.Data.SqlDbType.VarChar).Value = apellidos;
+                sqlCommand.Parameters.Add("@FechaNacimiento", System.Data.SqlDbType.DateTime).Value = fechaNacimiento;
+                sqlCommand.Parameters.Add("@Telefono", System.Data.SqlDbType.VarChar).Value = telefono;
+                sqlCommand.Parameters.Add("@IdDepartamento", System.Data.SqlDbType.Int).Value = idDepartamento;
+
+                sqlCommand.Connection = connection;
+                if (sqlCommand.ExecuteNonQuery() == 0)
+                {
+                    Editado = false;
+                }
+                clsMyConnection.closeConnection(ref connection);
+            }
+            catch (Exception e)
+            {
+                Editado = false;
+            }
+
+
+            return Editado;
+        }
+
+        public clsPersona obtenerPersona(int id)
+        {
+            clsPersona persona = null;
+            clsMyConnection clsMyConnection = new clsMyConnection();
+            try
+            {
+                SqlConnection connection = clsMyConnection.getConnection();
+                SqlDataReader miLector;
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.CommandText = "SELECT IDPersona, NombrePersona, ApellidosPersona, FechaNacimientoPersona, TelefonoPersona, IDDepartamento, FotoPersona FROM PD_Personas WHERE IdPersona = @Id";
+                sqlCommand.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = id;
+
+                sqlCommand.Connection = connection;
+                miLector = sqlCommand.ExecuteReader();
+
+                if (miLector.HasRows)
+                {
+                    miLector.Read();
+                    persona = new clsPersona();
+                    persona.idPersona = (int)miLector["IDPersona"];
+                    persona.IDdepartamento = (int)miLector["IDDepartamento"];
+                    if ((byte[])miLector["FotoPersona"] != null)
+                    {
+                        persona.foto = (byte[])miLector["FotoPersona"];
+                    }
+                    else
+                    {
+                        persona.foto = new byte[0];
+                    }
+
+                    persona.nombre = (string)miLector["NombrePersona"];
+                    persona.apellido = (string)miLector["ApellidosPersona"];
+                    if (!String.IsNullOrEmpty(miLector["FechaNacimientoPersona"].ToString()))
+                    {
+                        persona.fecha = (DateTime)miLector["FechaNacimientoPersona"];
+                    }
+                    if (!String.IsNullOrEmpty(miLector["TelefonoPersona"].ToString()))
+                    {
+                        persona.telefono = (string)miLector["TelefonoPersona"];
+                    }
+                }
+
+                clsMyConnection.closeConnection(ref connection);
+            }
+            catch (Exception e)
+            {
+            }
+            return persona;
+        }
+
+        public clsDepartamento obtenerDepartamento(int id)
+        {
+            clsDepartamento departamento = null;
+            clsMyConnection clsMyConnection = new clsMyConnection();
+            try
+            {
+                SqlConnection connection = clsMyConnection.getConnection();
+                SqlDataReader miLector;
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.Text;
+
+                sqlCommand.CommandText = "SELECT IdDepartamento, NombreDepartamento FROM PD_Departamentos WHERE IdDepartamento = @Id";
+                sqlCommand.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+
+                sqlCommand.Connection = connection;
+                miLector = sqlCommand.ExecuteReader();
+
+                if (miLector.HasRows)
+                {
+                    miLector.Read();
+                    departamento = new clsDepartamento();
+                    departamento.Id = (int)miLector["IdDepartamento"];
+                    departamento.Nombre = (string)miLector["NombreDepartamento"];
+                }
+                miLector.Close();
+                clsMyConnection.closeConnection(ref connection);
+            }
+            catch (Exception e)
+            {
+            }
+            return departamento;
+        }
+
+        public static List<clsDepartamento> obtenerListadoDeDepartamentos()
+        {
+            List<clsDepartamento> listadoDepartamentos = new List<clsDepartamento>();
+
+            clsMyConnection clsMyConnection = new clsMyConnection();
+            try
+            {
+                SqlConnection connection = clsMyConnection.getConnection();
+                SqlCommand sqlCommand = new SqlCommand();
+                SqlDataReader miLector;
+                clsDepartamento departamento;
+
+
+                sqlCommand.CommandText = "SELECT * FROM PD_Departamentos";
+                sqlCommand.Connection = connection;
+
+                miLector = sqlCommand.ExecuteReader();
+
+                if (miLector.HasRows)
+                {
+                    while (miLector.Read())
+                    {
+                        departamento = new clsDepartamento();
+                        departamento.Id = (int)miLector["IdDepartamento"];
+                        departamento.Nombre = (string)miLector["NombreDepartamento"];
+                        listadoDepartamentos.Add(departamento);
+                    }
+                }
+
+                miLector.Close();
+                clsMyConnection.closeConnection(ref connection);
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return listadoDepartamentos;
+        }
+
     }
 }

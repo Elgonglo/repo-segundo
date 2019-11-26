@@ -31,12 +31,18 @@ namespace CRUD_personas_DAL.Lists
                     while (miLector.Read())
                     {
                         persona = new clsPersona();
-                        //persona.fecha = (DateTime)miLector["FechaNacimientoPersona"];
                         persona.nombre = (string)miLector["NombrePersona"];
                         persona.apellido = (string)miLector["ApellidosPersona"];
                         persona.IDdepartamento = (int)miLector["IDDepartamento"];
-                        persona.telefono = (string)miLector["TelefonoPersona"];
                         persona.idPersona = (int)miLector["IdPersona"];
+                        if (!String.IsNullOrEmpty(miLector["FechaNacimientoPersona"].ToString()))
+                        {
+                            persona.fecha = (DateTime)miLector["FechaNacimientoPersona"];
+                        }
+                        if (!String.IsNullOrEmpty(miLector["TelefonoPersona"].ToString()))
+                        {
+                            persona.telefono = (string)miLector["TelefonoPersona"];
+                        }
                         listado.Add(persona);
                     }
                 }

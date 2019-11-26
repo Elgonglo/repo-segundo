@@ -47,6 +47,42 @@ namespace CRUD_personas_BL.Services
             persona = manejadora.buscarPersona(id);
             return persona;
         }
-        
+        /// <summary>
+        /// Edita a la persona
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellidos"></param>
+        /// <param name="telefono"></param>
+        /// <param name="fechaNacimiento"></param>
+        /// <param name="idDepartamento"></param>
+        /// <returns></returns>
+        public bool editarPersona(int id, String nombre, String apellidos, String telefono, DateTime fechaNacimiento, int idDepartamento)
+        {
+            ClsManejadoraPersonaDAL manejadora = new ClsManejadoraPersonaDAL();
+            return manejadora.editarPersona(id, nombre, apellidos, telefono, fechaNacimiento, idDepartamento);
+        }
+        /// <summary>
+        /// obtiene los detalles de la persona
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public clsPersona obtenerPersona(int id)
+        {
+            ClsManejadoraPersonaDAL manejadora = new ClsManejadoraPersonaDAL();
+            return manejadora.obtenerPersona(id);
+        }
+
+        public static List<clsDepartamento> obtenerListadoDeDepartamentos()
+        {
+            return ClsManejadoraPersonaDAL.obtenerListadoDeDepartamentos();
+        }
+
+        public clsDepartamento obtenerDepartamento(int id)
+        {
+            ClsManejadoraPersonaDAL manejadora = new ClsManejadoraPersonaDAL();
+            return manejadora.obtenerDepartamento(id);
+        }
+
     }
 }

@@ -1,0 +1,69 @@
+﻿@model CRUD_personas_UI.Models.clsPersonaConDepartamento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>clsPersonaConDepartamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDdepartamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDdepartamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idPersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idPersona)
+        </dd>
+
+        dd>
+        <img src="data:image;base64,@System.Convert.ToBase64String(Model.foto)" width="80" height="80" />
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.idPersona }) |
+    @Html.ActionLink("Back to List", "list")
+</p>
