@@ -73,7 +73,7 @@ namespace CRUD_personas_BL.Services
             return manejadora.obtenerPersona(id);
         }
 
-        public static List<clsDepartamento> obtenerListadoDeDepartamentos()
+        public  List<clsDepartamento> obtenerListadoDeDepartamentos()
         {
             return ClsManejadoraPersonaDAL.obtenerListadoDeDepartamentos();
         }

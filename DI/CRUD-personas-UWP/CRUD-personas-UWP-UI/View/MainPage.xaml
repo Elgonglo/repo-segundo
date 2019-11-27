@@ -6,9 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:conv="using:CRUD_personas_UWP_UI.Converters"
     xmlns:vm="using:CRUD_personas_UWP_UI.ViewModel"
     xmlns:Windows10version1809="using:Windows.UI.Xaml.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <conv:ConverterFecha x:Key="converterFecha"/>
+    </Page.Resources>
     <Page.DataContext>
         <vm:ClsMainPageVM></vm:ClsMainPageVM>
     </Page.DataContext>
@@ -70,7 +74,12 @@
 
             <TextBox x:Name="tbNombre" Grid.Column="1" Grid.Row="0" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay}"></TextBox>
             <TextBox x:Name="tbApellidos" Grid.Column="1" Grid.Row="1" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.apellido, Mode=TwoWay}"></TextBox>
-            <TextBox x:Name="tbFechaNacimiento" Grid.Column="1" Grid.Row="2" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.fecha , Mode=TwoWay}"></TextBox>
+            <TextBox x:Name="tbFechaNacimiento"  
+                     Grid.Column="1" Grid.Row="2" 
+                     Background="White" Margin="10" 
+                     Text="{Binding PersonaSeleccionada.fecha 
+                , Mode=TwoWay,
+                Converter={StaticResource converterFecha}}"></TextBox>
             <TextBox x:Name="tbTelefono" Grid.Column="1" Grid.Row="3" Background="White" Margin="10" Text="{Binding PersonaSeleccionada.telefono, Mode=TwoWay}"></TextBox>
             <ComboBox Grid.Column="0" Grid.Row="6" ItemsSource="{Binding ListadoDepartamentos}"
                       SelectedValuePath="ID" SelectedValue="{Binding PersonaSeleccionada.IDdepartamento, Mode=TwoWay}" PlaceholderText="Departamento" >
