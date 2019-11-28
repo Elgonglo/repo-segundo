@@ -11,7 +11,7 @@ namespace CRUD_personas_DAL.Lists
 {
     public class ClsListadoPersonasDAL
     {
-        public static IEnumerable<clsPersona> listaPersonas()
+        public List<clsPersona> listaPersonas()
         {
             clsPersona persona;
             List<clsPersona> listado = new List<clsPersona>();

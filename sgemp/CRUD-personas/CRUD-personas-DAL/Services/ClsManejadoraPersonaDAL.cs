@@ -123,6 +123,16 @@ namespace CRUD_personas_DAL.Services
             conexion.closeConnection(ref miConexion);
             return persona;
         }
+        /// <summary>
+        /// Edita la persona
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellidos"></param>
+        /// <param name="telefono"></param>
+        /// <param name="fechaNacimiento"></param>
+        /// <param name="idDepartamento"></param>
+        /// <returns></returns>
         public bool editarPersona(int id, String nombre, String apellidos, String telefono, DateTime fechaNacimiento, int idDepartamento)
         {
             bool Editado = true;
@@ -155,7 +165,11 @@ namespace CRUD_personas_DAL.Services
 
             return Editado;
         }
-
+        /// <summary>
+        /// Obtiene la persona
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public clsPersona obtenerPersona(int id)
         {
             clsPersona persona = null;
@@ -178,15 +192,14 @@ namespace CRUD_personas_DAL.Services
                     persona = new clsPersona();
                     persona.idPersona = (int)miLector["IDPersona"];
                     persona.IDdepartamento = (int)miLector["IDDepartamento"];
-                    if ((byte[])miLector["FotoPersona"] != null)
+                   /* if ((byte[])miLector["FotoPersona"] != null)
                     {
                         persona.foto = (byte[])miLector["FotoPersona"];
                     }
                     else
                     {
                         persona.foto = new byte[0];
-                    }
-
+                    }*/
                     persona.nombre = (string)miLector["NombrePersona"];
                     persona.apellido = (string)miLector["ApellidosPersona"];
                     if (!String.IsNullOrEmpty(miLector["FechaNacimientoPersona"].ToString()))

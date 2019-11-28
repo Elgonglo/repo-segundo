@@ -29,12 +29,10 @@ namespace CRUD_personas_DAL.Lists
                 {
                     while (miLector.Read())
                     {
-                        depart = new clsDepartamento();
-                        if (!String.IsNullOrEmpty(miLector["NombreDepartamento"].ToString()))
-                        {
+                            depart = new clsDepartamento();
+                            depart.Id = (int)miLector["IdDepartamento"];
                             depart.Nombre = (String)miLector["NombreDepartamento"];
-                        }
-                        listado.Add(depart);
+                            listado.Add(depart);
                     }
                 }
             }

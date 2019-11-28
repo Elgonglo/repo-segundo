@@ -58,12 +58,9 @@
             @Html.DisplayFor(model => model.idPersona)
         </dd>
 
-        dd>
-        <img src="data:image;base64,@System.Convert.ToBase64String(Model.foto)" width="80" height="80" />
-        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.idPersona }) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.idPersona  }) |
     @Html.ActionLink("Back to List", "list")
 </p>

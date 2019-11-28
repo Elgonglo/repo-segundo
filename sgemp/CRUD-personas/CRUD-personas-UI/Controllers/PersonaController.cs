@@ -1,6 +1,7 @@
 ﻿using _CRUD_personas_BL;
 using _CRUD_personas_BL.Lists;
 using _CRUD_personas_Entities;
+using CRUD_personas_BL.Lists;
 using CRUD_personas_BL.Services;
 using CRUD_personas_UI.Models;
 using System;
@@ -31,28 +32,40 @@ namespace CRUD_personas_UI.Controllers
 
         }
         /// <summary>
-        /// se va a la lista crear
+        /// se va a la vista crear
         /// </summary>
         /// <returns></returns>
         public ActionResult Create()
         {
-            clsPersonaConListaDepartamentos personaConDepartamento = new clsPersonaConListaDepartamentos();
-            return View(personaConDepartamento);
+            try
+            {
+                clsPersonaConListaDepartamentos personaConDepartamento = new clsPersonaConListaDepartamentos();
+                clsListadoDepartamentosBL listaDep = new clsListadoDepartamentosBL();
+                personaConDepartamento.Departamentos = clsListadoDepartamentosBL.listadoDepartamentosBL();
+                return View(personaConDepartamento);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+            
         }
 
         [HttpPost]
-        public ActionResult Create(clsPersona persona)
+        public ActionResult Create(clsPersonaConListaDepartamentos personaConDepart)
         {
             ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
             List<clsPersona> lista = new List<clsPersona>();
+            clsPersona persona = new clsPersona(personaConDepart.IDdepartamento, personaConDepart.nombre, personaConDepart.apellido, personaConDepart.fecha, personaConDepart.telefono, personaConDepart.IDdepartamento,personaConDepart.foto);
+            clsListadoPersonasBL listado = new clsListadoPersonasBL();
 
             if (ModelState.IsValid)
             { 
                 try
                 {
                     manejadora.insertarPersona_BL(persona);
-                    ViewData["Mensaje"] = $"Se ha insertado Correctamente";   
-                    return View("list"); 
+                    ViewData["Mensaje"] = $"Se ha insertado Correctamente";
+                    return RedirectToAction("list");
                 }
                 catch (Exception e)
                 {
@@ -64,13 +77,18 @@ namespace CRUD_personas_UI.Controllers
                 return View(); 
             }
         }
-
+        /// <summary>
+        /// Aqui se borra
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Delete(int id)
         {
             ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
             clsPersona persona = new clsPersona();
             persona = manejadora.buscarPersona_BL(id);
-            return View(persona);
+            clsPersonaConDepartamento personaDepart = new clsPersonaConDepartamento(persona);
+            return View(personaDepart);
         }
 
         [HttpPost, ActionName("Delete")]
@@ -93,6 +111,11 @@ namespace CRUD_personas_UI.Controllers
 
             return View("list", listado.ListadoPersonas());
         }
+        /// <summary>
+        /// Aqui se edita
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Edit(int id)
         {
             ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
@@ -130,7 +153,11 @@ namespace CRUD_personas_UI.Controllers
                 return View();
             }
         }
-
+        /// <summary>
+        /// Aqui se ve los detalles de la persona
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Details(int id)
         {
             ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();

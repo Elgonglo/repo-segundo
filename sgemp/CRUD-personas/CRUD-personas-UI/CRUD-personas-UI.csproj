@@ -116,7 +116,6 @@
     <Content Include="Web.config" />
     <Content Include="Views\Persona\Create.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Persona\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -150,6 +149,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Persona\Edit.cshtml" />
     <Content Include="Views\Persona\Details.cshtml" />
+    <Content Include="Views\Persona\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
