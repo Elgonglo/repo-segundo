@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>CRUD_PERSONAS_NETCORE_BL</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRUD-PERSONAS-NETCORE-DAL\CRUD-PERSONAS-NETCORE-DAL.csproj" />
+    <ProjectReference Include="..\CRUD-PERSONAS-NETCORE-Entities\CRUD-PERSONAS-NETCORE-Entities.csproj" />
+  </ItemGroup>
+
+</Project>
