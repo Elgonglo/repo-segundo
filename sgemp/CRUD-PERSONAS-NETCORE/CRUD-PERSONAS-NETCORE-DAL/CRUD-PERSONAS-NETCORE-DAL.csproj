@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
-    <RootNamespace>CRUD_PERSONAS_NETCORE_DAL</RootNamespace>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>CRUD_Personas_netcore_DAL</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CRUD-PERSONAS-NETCORE-Entities\CRUD-PERSONAS-NETCORE-Entities.csproj" />
+    <ProjectReference Include="..\CRUD-Personas-netcore-Entities\CRUD-Personas-netcore-Entities.csproj" />
   </ItemGroup>
 
 </Project>

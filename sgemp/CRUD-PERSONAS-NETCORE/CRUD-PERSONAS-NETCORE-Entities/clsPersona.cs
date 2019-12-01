@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Web.Mvc;
 
-namespace CRUD_PERSONAS_NETCORE_Entities
+namespace CRUD_Personas_netcore_Entities
 {
     public class clsPersona 
     {

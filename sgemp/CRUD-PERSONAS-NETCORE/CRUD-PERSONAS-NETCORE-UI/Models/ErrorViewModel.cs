@@ -1,6 +1,6 @@
 using System;
 
-namespace CRUD_PERSONAS_NETCORE_UI.Models
+namespace CRUD_Personas_netcore_UI.Models
 {
     public class ErrorViewModel
     {

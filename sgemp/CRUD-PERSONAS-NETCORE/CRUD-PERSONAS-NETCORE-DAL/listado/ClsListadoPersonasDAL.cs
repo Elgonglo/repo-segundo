@@ -1,5 +1,5 @@
-﻿using CRUD_PERSONAS_NETCORE_DAL.conexion;
-using CRUD_PERSONAS_NETCORE_Entities;
+﻿using _CRUD_Personas_netcore_DAL.Conexion;
+using CRUD_Personas_netcore_Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRUD_PERSONAS_NETCORE_DAL.listado
+namespace _CRUD_Personas_netcore_DAL.listado
 {
     public class ClsListadoPersonasDAL
     {
-        public List<clsPersona> listaPersonas()
+        public static IEnumerable<clsPersona> listaPersonas()
         {
             clsPersona persona;
             List<clsPersona> listado = new List<clsPersona>();

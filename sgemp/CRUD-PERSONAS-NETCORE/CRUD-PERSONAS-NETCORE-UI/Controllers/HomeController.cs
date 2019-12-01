@@ -4,22 +4,37 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using CRUD_PERSONAS_NETCORE_UI.Models;
+using CRUD_Personas_netcore_UI.Models;
+using CRUD_Personas_netcore_BL.listado;
 
-namespace CRUD_PERSONAS_NETCORE_UI.Controllers
+namespace CRUD_Personas_netcore_UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
+            try
+            {
+                clsListadoPersonasBL listado = new clsListadoPersonasBL();
+                return View(listado.ListadoPersonas());
+            }
+            catch (Exception e)
+            {
+                return View("Error"); //Pagina de error
+            }
+        }
+
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Your application description page.";
+
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            ViewData["Message"] = "Your contact page.";
+
             return View();
         }
 

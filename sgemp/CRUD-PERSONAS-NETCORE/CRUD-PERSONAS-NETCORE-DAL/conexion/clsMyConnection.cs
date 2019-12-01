@@ -20,7 +20,8 @@ using System.Data.SqlClient;
 //
 
 
-namespace CRUD_PERSONAS_NETCORE_DAL.conexion { 
+namespace _CRUD_Personas_netcore_DAL.Conexion
+{
     public class clsMyConnection
     {
         //Atributos
