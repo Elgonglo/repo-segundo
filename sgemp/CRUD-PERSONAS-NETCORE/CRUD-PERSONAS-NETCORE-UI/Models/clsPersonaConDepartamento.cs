@@ -1,4 +1,5 @@
 ﻿using CRUD_PERSONAS_NETCORE_BL.manejadora;
+using CRUD_Personas_netcore_Entities;
 using CRUD_PERSONAS_NETCORE_Entities;
 using System;
 using System.Collections.Generic;

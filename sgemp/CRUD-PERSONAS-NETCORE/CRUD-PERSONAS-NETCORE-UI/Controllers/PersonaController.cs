@@ -1,5 +1,7 @@
-﻿using CRUD_PERSONAS_NETCORE_BL.listado;
+﻿using CRUD_Personas_netcore_BL.listado;
+using CRUD_PERSONAS_NETCORE_BL.listado;
 using CRUD_PERSONAS_NETCORE_BL.manejadora;
+using CRUD_Personas_netcore_Entities;
 using CRUD_PERSONAS_NETCORE_Entities;
 using CRUD_PERSONAS_NETCORE_UI.Models;
 using System;
@@ -50,7 +52,7 @@ namespace CRUD_PERSONAS_NETCORE_UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(clsPersonaConListaDepartamentos personaConDepart)
+        public ActionResult Create(clsPersonaConDepartamento personaConDepart)
         {
             ClsManejadoraPersonas_BL manejadora = new ClsManejadoraPersonas_BL();
             List<clsPersona> lista = new List<clsPersona>();

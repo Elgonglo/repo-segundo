@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CRUD-Personas-netcore-Entities\CRUD-Personas-netcore-Entities.csproj" />
+    <ProjectReference Include="..\CRUD-Personas-netcore-Entities\CRUD-PERSONAS-NETCORE-Entities.csproj" />
   </ItemGroup>
 
 </Project>
